@@ -1,0 +1,12 @@
+
+# Python
+**venv
+**__pycache__
+
+# Darkflow stuff
+darkflow
+weights
+
+# App created
+detected_images
+labeled_images
