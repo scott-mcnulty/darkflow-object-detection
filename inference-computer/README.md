@@ -60,3 +60,20 @@ python3 predict-local-images.py
 If you didn't alter the `config.py` file take a look at the `detected-images` and `labeled-images` directories to see the script output images. Here is an example output image:
 
 ![Example Output Image](docs/images/example-output-img.jpg)
+
+### Using With the Camera Server
+
+After going through the [setup](../camera-server/README.md) run the camera in a new terminal:
+
+```sh
+# From ../camera-server/
+python3 app.py
+```
+
+Run the `predict-camera-server-images.py` script:
+
+```sh
+python3 predict-camera-server-images.py
+```
+
+Every few seconds the script should get an image from the camera server then predict on it. The images will be stored in a similar way as described in the paragraph above.

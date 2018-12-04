@@ -79,7 +79,9 @@ class Imager():
     def draw_boxes(detections, detection_image):
         """
         Draws boxes on the image that was predicted on.
-        The different detections will have labelled boxes around them.
+        The different detections will have labeled boxes around them.
+
+        Uses all labels if config.labels is unspecified.
         
         :param detections: Detection predictions from the model.
         :type detections: dict
@@ -93,7 +95,7 @@ class Imager():
         draw = ImageDraw.Draw(detection_image)
         for detection in detections:
 
-            if detection['label'] in config.labels:
+            if detection['label'] in config.labels or not config.labels:
                 draw.rectangle([detection['topleft']['x'], detection['topleft']['y'], 
                                 detection['bottomright']['x'], detection['bottomright']['y']],
                             outline=(255, 0, 0))

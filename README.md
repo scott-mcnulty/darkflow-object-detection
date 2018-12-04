@@ -11,4 +11,6 @@ What I've done is added some setup instructions along with some configuration op
 
 ## Setup
 
-[inference-computer setup](src/inference-computer/README.md)
+[camera-server setup](camera-server/README.md)
+
+[inference-computer setup](inference-computer/README.md)
