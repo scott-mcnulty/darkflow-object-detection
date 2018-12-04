@@ -13,12 +13,12 @@ labels = [
     'cat'
 ]
 
-base_image_path = './detected_images'
-base_labeled_image_path = './labeled_images'
+base_image_path = './detected-images'
+base_labeled_image_path = './labeled-images'
 
 # If true detected objects will be labelled with a box drawn on the image
 draw_box = True
 
 # Change this to use local images
-local_image_path = './test_images'
+local_image_path = './test-images'
 # local_image_path = ''

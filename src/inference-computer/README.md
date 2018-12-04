@@ -29,7 +29,7 @@ pip install .;
 cd ..
 ```
 
-5. [Download](https://drive.google.com/drive/folders/0B1tW_VtY7onidEwyQ2FtQVplWEU) some pre-trained yolo weights as specified in the darkflow repo readme. I chose to download yolo.weights. Put the downloaded weights in the `weights` directory.
+5. [Download](https://drive.google.com/drive/folders/0B1tW_VtY7onidEwyQ2FtQVplWEU) some pre-trained yolo weights as specified in the darkflow repo readme. I chose to download yolo.weights. Put the downloaded weights in the `weights` directory. Depending on the .weights file chosen you may need to update the model config being used in the model_options dictionary in config.py.
 
 6. Copy the configs from the darkflow repo:
 
@@ -48,3 +48,15 @@ python3 app.py
 ## Configuration
 
 See the config.py file to see program options.
+
+## Example Usage
+
+After carefully following the setup steps see the `predict-local-images.py` and `predict-camera-server-images.py` files for two examples. You should be able to run the local images file right out of the box after setup:
+
+```sh
+python3 predict-local-images.py
+```
+
+If you didn't alter the `config.py` file take a look at the `detected-images` and `labeled-images` directories to see the script output images. Here is an example output image:
+
+![Example Output Image](docs/images/example-output-img.jpg)
