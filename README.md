@@ -1,16 +1,30 @@
 # Darkflow Object Detection
 
-This is an extension of the [poor-mans-deep-learning-camera](https://github.com/burningion/poor-mans-deep-learning-camera.git) by [@burningion](https://github.com/burningion).
+[TODO] Update description
 
-What I've done is added some setup instructions along with some configuration options for flexibility when deploying.
+# Table of Contents
 
-## References
-
-[poor-mans-deep-learning-camera](https://github.com/burningion/poor-mans-deep-learning-camera.git) by [@burningion](https://github.com/burningion)  
-[darkflow](https://github.com/thtrieu/darkflow.git) by [@thtrieu](https://github.com/thtrieu)  
+- [Darkflow Object Detection](#darkflow-object-detection)
+- [Table of Contents](#table-of-contents)
+    - [Setup](#setup)
+        - [Docker](#docker)
+        - [Non-Docker](#non-docker)
+    - [References](#references)
 
 ## Setup
+
+### Docker
+
+[TODO] Update Docker setup
+
+### Non-Docker
 
 [camera-server setup](camera-server/README.md)
 
 [inference-computer setup](inference-computer/README.md)
+
+## References
+
+[poor-mans-deep-learning-camera](https://github.com/burningion/poor-mans-deep-learning-camera.git)  
+[darkflow](https://github.com/thtrieu/darkflow.git)  
+[video-streaming-with-flask-example](https://github.com/log0/video_streaming_with_flask_example.git)

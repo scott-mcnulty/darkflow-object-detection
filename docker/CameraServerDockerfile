@@ -1,0 +1,11 @@
+FROM python:3.6-slim
+
+# Add camera server code
+COPY camera-server /camera-server
+WORKDIR /camera-server
+
+# Install dependencies
+RUN pip3 install --upgrade pip -r requirements.txt
+
+# Default command
+CMD [ "sh" ]
