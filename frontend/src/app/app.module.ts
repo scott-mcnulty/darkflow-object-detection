@@ -4,13 +4,25 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { UiModule } from './ui/ui.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    MDBBootstrapModule.forRoot(),
+
+    UiModule,
+
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
