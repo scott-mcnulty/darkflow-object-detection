@@ -6,6 +6,7 @@
 # Darkflow stuff
 darkflow
 weights
+cfg
 
 # App created
 detected-images

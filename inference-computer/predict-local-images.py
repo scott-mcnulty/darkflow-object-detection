@@ -1,3 +1,8 @@
+import time
+import sys
+import logging
+logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
+
 from images import Imager
 from predict import Predictor
 import config
@@ -11,12 +16,18 @@ def start(p):
 
         detection_image, detection_image_cv2 = Imager.get_image_local('{}/{}'.format(config.local_image_path, f))
         predictions = p.predict(detection_image_cv2)
+
+        if not predictions:
+            logging.info('No objects detected')
+        
+        labels = [detection['label'] for detection in predictions]
+        logging.info('Found objects with labels: {}'.format(labels))
         
         # Look through the things that were detected
         for detection in predictions:
 
             # Save any images where an object we're looking for exists
-            if detection['label'] in config.labels:
+            if detection['label'] in config.labels or not labels: 
                 Imager.save_image(config.base_image_path, detection['label'], detection_image)
 
                 # Draw the detection box if specified

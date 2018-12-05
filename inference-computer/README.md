@@ -42,7 +42,7 @@ cp -r darkflow/cfg .
 8. Run the app:
 
 ```sh
-python3 app.py
+python3 predict-local-images.py
 ```
 
 ## Configuration

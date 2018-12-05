@@ -1,7 +1,7 @@
 import time
 import sys
 import logging
-logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
 from images import Imager
 from predict import Predictor
