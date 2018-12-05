@@ -1,15 +1,16 @@
 
 <!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark elegant-color">
+<mdb-navbar SideClass="navbar navbar-expand-lg fixed-top navbar-dark elegant-color-dark">
 
         <!-- Navbar brand -->
-        <mdb-navbar-brand><a class="navbar-brand" routerLink="/home">Home</a></mdb-navbar-brand>
+        <mdb-navbar-brand>
+            <a class="navbar-brand" routerLink="/home">Home</a>
+        </mdb-navbar-brand>
     
         <!-- Collapsible content -->
         <links>
     
             <!-- Links -->
-            <!-- <ul class="navbar-nav mr-auto"> -->
             <ul class="navbar-nav mr-auto">
                 <!-- <li class="nav-item active">
                     <a class="nav-link waves-light" routerLink="/home" mdbWavesEffect>Image Store<span class="sr-only">(current)</span></a>
@@ -47,11 +48,13 @@
             <!-- Links -->
     
             <!-- Search form -->
-            <!-- <form class="form-inline waves-light">
+            <!-- <form class="form-inline waves-light shorter-search"> -->
+            <form class="shorter-search">
+            <!-- <form> -->
                 <div class="md-form mt-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 </div>
-            </form> -->
+            </form>
 
 
 
