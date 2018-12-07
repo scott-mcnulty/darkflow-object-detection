@@ -12,7 +12,7 @@ source venv/bin/activate
 2. Install dependencies:
 
 ```sh
-python -m pip install tensorflow numpy opencv-python cython image requests
+python -m pip install tensorflow==1.12.0 numpy==1.15.4 opencv-python==3.4.4.19 Cython==0.29.1 image==1.5.27 requests==2.20.1
 ```
 
 3. Clone darkflow repo:
@@ -59,7 +59,7 @@ python3 predict-local-images.py
 
 If you didn't alter the `config.py` file take a look at the `detected-images` and `labeled-images` directories to see the script output images. Here is an example output image:
 
-![Example Output Image](docs/images/example-output-img.jpg)
+![Example Output Image](docs/images/example-output-img0.jpg)
 
 ### Using With the Camera Server
 
@@ -77,3 +77,9 @@ python3 predict-camera-server-images.py
 ```
 
 Every few seconds the script should get an image from the camera server then predict on it. The images will be stored in a similar way as described in the paragraph above.
+
+Example output images:
+
+![Example Output Image](docs/images/example-output-img2.jpg)
+
+![Example Output Image](docs/images/example-output-img1.jpg)

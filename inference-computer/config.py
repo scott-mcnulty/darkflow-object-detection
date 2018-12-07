@@ -9,13 +9,13 @@ model_options = {"model": "cfg/yolo.cfg", "load": "weights/yolo.weights", "thres
 
 # Specifies what objects to detect
 # See cfg/coco.names for other labels
-labels = [
-    'bird',
-    'cat'
-]
+# labels = [
+#     'bird',
+#     'cat'
+# ]
 
 # Uncomment to see all labels drawn (specified in the example usage scripts)
-# labels = []
+labels = []
 
 # Try other labels
 # labels = [
@@ -28,6 +28,7 @@ base_labeled_image_path = './labeled-images'
 
 # If true detected objects will be labeled with a box drawn on the image
 draw_box = True
+# draw_box = False
 
 # Change this to use local images
 local_image_path = './test-images'

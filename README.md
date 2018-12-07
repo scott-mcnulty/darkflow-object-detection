@@ -25,6 +25,7 @@
 
 ## References
 
+[flask-video-streaming](https://github.com/miguelgrinberg/flask-video-streaming.git)  
+[video-streaming-with-flask-example](https://github.com/log0/video_streaming_with_flask_example.git)  
 [poor-mans-deep-learning-camera](https://github.com/burningion/poor-mans-deep-learning-camera.git)  
-[darkflow](https://github.com/thtrieu/darkflow.git)  
-[video-streaming-with-flask-example](https://github.com/log0/video_streaming_with_flask_example.git)
+[darkflow](https://github.com/thtrieu/darkflow.git)
