@@ -1,0 +1,54 @@
+version: '3'
+
+
+services:
+
+  # Flask app to get images
+  # TODO: Could not get cam to be usable by the container when I tried.
+  # Need to try other approaches. Also update dockerfile to remove
+  # cached stuff after apt-get commands
+  # camera-server:
+  #   build:
+  #     context: .
+  #     dockerfile: docker/CameraServerDockerfile
+  #   ports:
+  #     - '5000:5000'
+  #   command: sh run.sh
+  #   volumes:
+  #     - /dev/video0:/dev/video0
+
+
+  # Angular2 frontend
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/FrontendDockerfile
+    ports:
+      - '4200:4200'
+
+
+  # MySQL database to keep track of images
+  image-store:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: image_store_db
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./image-store/sql/create-tables.sql:/docker-entrypoint-initdb.d/create-tables.sql
+      - ./image-store/mysql/:/var/lib/mysql
+
+
+  # For easier viewing of database
+  # Use:
+  #   host: image-store
+  #   user/pass/database: see env values defined in image-store service
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - '8080:8080'
