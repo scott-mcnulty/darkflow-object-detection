@@ -9,13 +9,13 @@ model_options = {"model": "cfg/yolo.cfg", "load": "weights/yolo.weights", "thres
 
 # Specifies what objects to detect
 # See cfg/coco.names for other labels
-# labels = [
-#     'bird',
-#     'cat'
-# ]
+labels = [
+    'bird',
+    'cat'
+]
 
 # Uncomment to see all labels drawn (specified in the example usage scripts)
-labels = []
+# labels = []
 
 # Try other labels
 # labels = [
@@ -23,8 +23,8 @@ labels = []
 #     'tvmonitor'
 # ]
 
-base_image_path = './detected-images'
-base_labeled_image_path = './labeled-images'
+base_image_path = './images/detected-images'
+base_labeled_image_path = './images/labeled-images'
 
 # If true detected objects will be labeled with a box drawn on the image
 draw_box = True

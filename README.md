@@ -21,7 +21,7 @@
 
 [camera-server setup](camera-server/README.md)
 
-[inference-computer setup](inference-computer/README.md)
+[inferencer setup](inference/README.md)
 
 ## References
 

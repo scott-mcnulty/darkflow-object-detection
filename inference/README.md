@@ -1,4 +1,4 @@
-# Inference Computer
+# Inference
 
 ## Setup
 
@@ -63,7 +63,7 @@ If you didn't alter the `config.py` file take a look at the `detected-images` an
 
 ### Using With the Camera Server
 
-After going through the [setup](../camera-server/README.md) run the camera in a new terminal:
+You can also run the camera server on the same computer to test out predicting from images supplied by the camera server. After going through the [setup](../camera-server/README.md) run the camera in a new terminal:
 
 ```sh
 # From ../camera-server/
