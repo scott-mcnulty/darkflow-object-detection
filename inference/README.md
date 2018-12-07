@@ -57,7 +57,7 @@ After carefully following the setup steps see the `predict-local-images.py` and 
 python3 predict-local-images.py
 ```
 
-If you didn't alter the `config.py` file take a look at the `detected-images` and `labeled-images` directories to see the script output images. Here is an example output image:
+If you didn't alter the `config.py` file take a look at the `images/detected-images` and `images/labeled-images` directories to see the script output images. Here is an example output image:
 
 ![Example Output Image](docs/images/example-output-img0.jpg)
 
