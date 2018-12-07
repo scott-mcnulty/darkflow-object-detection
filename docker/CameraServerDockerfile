@@ -4,8 +4,11 @@ FROM python:3.6-slim
 COPY camera-server /camera-server
 WORKDIR /camera-server
 
+RUN apt-get update && apt-get install -y \
+    libgtk2.0-dev
+
 # Install dependencies
-RUN pip3 install --upgrade pip -r requirements.txt
+RUN pip install --upgrade pip -r requirements.txt
 
 # Default command
-CMD [ "sh" ]
+CMD [ "python3", "app.py" ]
