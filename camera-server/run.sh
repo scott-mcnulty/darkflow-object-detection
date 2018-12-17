@@ -1,1 +1,1 @@
-python3 app.py
+gunicorn --reload --config server/configs/gunicorn_config.py "server.app:app"
