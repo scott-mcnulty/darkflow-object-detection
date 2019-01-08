@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { UiModule } from './ui/ui.module';
-import { DashboardModule } from './dashboard/dashboard.module';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { DashboardModule } from './pages/dashboard/dashboard.module';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MDBBootstrapModule.forRoot(),
 
     UiModule,
-
     DashboardModule
   ],
   providers: [],

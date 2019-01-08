@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ImageStoreComponent } from './dashboard/image-store/image-store.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { AboutComponent } from './dashboard/about/about.component';
-import { SettingsComponent } from './dashboard/settings/settings.component';
+import { ImageStoreComponent } from './pages/dashboard/image-store/image-store.component';
+import { AboutComponent } from './pages/dashboard/about/about.component';
+import { SettingsComponent } from './pages/dashboard/settings/settings.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
     {
