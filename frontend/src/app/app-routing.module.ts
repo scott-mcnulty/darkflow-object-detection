@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ImageStoreComponent } from './pages/dashboard/image-store/image-store.component';
-import { AboutComponent } from './pages/dashboard/about/about.component';
-import { SettingsComponent } from './pages/dashboard/settings/settings.component';
+import { ImageStoreComponent } from './pages/image-store/image-store.component';
+import { AboutComponent } from './pages/about/about.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { FeedComponent } from './pages/feed/feed.component';
 
 const routes: Routes = [
     {
@@ -15,6 +16,11 @@ const routes: Routes = [
     { path: '',
       redirectTo: '/home',
       pathMatch: 'full'
+    },
+    {
+        path: 'feed',
+        component: FeedComponent,
+        data: { title: 'Feed' }
     },
     {
         path: 'about',
