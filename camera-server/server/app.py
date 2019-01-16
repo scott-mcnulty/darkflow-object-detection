@@ -3,6 +3,7 @@ import os
 import time
 
 from flask import Flask
+from flask_cors import CORS
 
 from server import routes
 
@@ -10,4 +11,5 @@ def create_app():
 
     app = Flask(__name__)
     app = routes.add_app_routes(app)
+    CORS(app)
     return app
