@@ -4,7 +4,7 @@ logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
 from darkflow.net.build import TFNet
 
-import config
+from configs import config
 
 
 class Predictor():

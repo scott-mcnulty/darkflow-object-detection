@@ -1,11 +1,12 @@
+import os
 
-
-camera_server_url = 'http://localhost:5000'
+camera_server_url = os.environ.get('CAMERA_SERVER_URL', 'http://localhost:8000')
 camera_server_image_url = '{}/image'.format(camera_server_url)
 camera_server_video_feed_url = '{}/video_feed'.format(camera_server_url)
 
 # Specifies the darkflow model
-model_options = {"model": "cfg/yolo.cfg", "load": "weights/yolo.weights", "threshold": 0.4}
+# model_options = {"model": "cfg/yolo.cfg", "load": "weights/yolo.weights", "threshold": 0.4}
+model_options = {"model": "cfg/tiny-yolo-voc.cfg", "load": "weights/tiny-yolo-voc.weights", "threshold": 0.4}
 
 # Specifies what objects to detect
 # See cfg/coco.names for other labels

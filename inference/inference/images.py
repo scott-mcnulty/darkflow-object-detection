@@ -12,7 +12,7 @@ import requests
 from PIL import Image, ImageDraw
 import cv2
 
-import config
+from configs import config
 
 
 class Imager():
@@ -154,7 +154,7 @@ class Imager():
         return detection_image_cv2
 
     @staticmethod
-    def save_image(base_path, label, detection_image_cv2, use_date=False):
+    def save_image(base_path, detection_image_cv2, use_date=False):
         """
         Saves an image based on some supplied filepath options.
         """
@@ -162,10 +162,10 @@ class Imager():
         logging.debug('save_image')
         if use_date:
             now = datetime.datetime.now()
-            save_path = '{}/{}/{}/{}/{}'.format(base_path, label, now.year, now.month, now.day)
+            save_path = '{}/{}/{}/{}'.format(base_path, now.year, now.month, now.day)
 
         else:
-            save_path = '{}/{}'.format(base_path, label)
+            save_path = '{}'.format(base_path)
 
         try:
             path, dirs, files = next(os.walk(save_path))
