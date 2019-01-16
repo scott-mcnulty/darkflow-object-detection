@@ -1,8 +1,10 @@
-<p>feed works!</p>
+<p *ngIf="imageToShow == undefined">Heating up camera...</p>
 
-<!-- <img [src]="imageToShow"
-     alt="Place image title"
-     *ngIf="!isImageLoading; else noImageFound">
+<div class="p-4"
+    *ngIf="imageToShow !== undefined">
+    <h3>Feed</h3>
+    <hr />
 
-<p></p> -->
-<!-- <button type="button" (click)="getImageFromService()">Get Image</button> -->
+    <img [src]="imageToShow"
+        class="img-fluid">
+</div>

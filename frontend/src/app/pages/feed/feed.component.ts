@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription, interval } from 'rxjs';
 
 import { ImageService } from '../../services/image.service';
-import { Subscription, interval } from 'rxjs';
+import { AppSettingsService } from '../../services/app-settings.service';
 
 @Component({
   selector: 'app-feed',
@@ -11,25 +12,18 @@ import { Subscription, interval } from 'rxjs';
 export class FeedComponent implements OnInit, OnDestroy {
 
   imageToShow: any;
-  isImageLoading: boolean;
-//   yourImageUrl = 'http://localhost:8000/video_feed';
-  yourImageUrl = 'http://localhost:8001/image';
+  imageRefresh = 100;
   sub: Subscription;
 
-  constructor(private imageService: ImageService ) { }
+  constructor(private imageService: ImageService, private appSettingsService: AppSettingsService ) { }
 
   ngOnInit() {
-    this.sub = interval(400).subscribe(() => this.getImageFromService());
-    this.getImageFromService();
-    setInterval(() => {
-        this.getImageFromService();
-    }, 400);
+    this.sub = interval(this.imageRefresh).subscribe(() => this.getImageFromService());
   }
 
   ngOnDestroy() {
       this.sub.unsubscribe();
   }
-
 
   createImageFromBlob(image: Blob) {
     const reader = new FileReader();
@@ -44,12 +38,10 @@ export class FeedComponent implements OnInit, OnDestroy {
   }
 
   getImageFromService() {
-    this.isImageLoading = true;
-    this.imageService.getImage(this.yourImageUrl).subscribe(data => {
+    this.imageService.getImage(this.appSettingsService.getSetting('cameraServerUrl') + '/image').subscribe(data => {
       this.createImageFromBlob(data);
-      this.isImageLoading = false;
     }, error => {
-      this.isImageLoading = false;
+      this.sub.unsubscribe();
       console.log(error);
     });
   }
