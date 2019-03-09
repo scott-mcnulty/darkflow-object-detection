@@ -34,3 +34,6 @@ draw_box = True
 # Change this to use local images
 local_image_path = './test-images'
 # local_image_path = ''
+
+# Time to wait between inferences (seconds)
+inference_sleep_time = 10

@@ -1,12 +1,13 @@
 FROM ubuntu:18.10
 
 #Install git
-RUN apt-get update \
-    && apt-get install -y \
+RUN apt-get update && apt-get install -q -y \
     git \
     gcc \
     libgtk2.0-dev \
     build-essential python3.6 python3.6-dev python3-pip \
+    # build-essential python3.6 python3-pip \
+    # --no-install-recommends \
     && \
     rm -rf /var/lib/apt/lists/*
 

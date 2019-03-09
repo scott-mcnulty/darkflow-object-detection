@@ -18,6 +18,30 @@ services:
   #     - /dev/video0:/dev/video0
 
 
+  # Flask app to get images
+  # TODO: Could not get cam to be usable by the container when I tried.
+  # Need to try other approaches. Also update dockerfile to remove
+  # cached stuff after apt-get commands
+  # camera-server:
+  #   build:
+  #     context: .
+  #     dockerfile: docker/CameraServerDockerfile
+  #   ports:
+  #     - '5000:5000'
+  #   command: sh run.sh
+  #   volumes:
+  #     - /dev/video0:/dev/video0
+
+  # Inference server
+  inference-server:
+    build:
+      context: inference
+      dockerfile: Dockerfile
+    ports:
+      - '8001:8001'
+    networks:
+      - host
+
   # Angular2 frontend
   frontend:
     build:

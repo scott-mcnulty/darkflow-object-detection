@@ -1,8 +1,9 @@
 FROM python:3.6-slim
 
 # Add camera server code
-COPY camera-server /camera-server
-WORKDIR /camera-server
+COPY server /app/server
+COPY requirements.txt /app/server
+WORKDIR /app/server
 
 RUN apt-get update && apt-get install -y \
     libgtk2.0-dev
@@ -11,4 +12,4 @@ RUN apt-get update && apt-get install -y \
 RUN pip install --upgrade pip -r requirements.txt
 
 # Default command
-CMD [ "python3", "app.py" ]
+CMD [ "gunicorn", "--config", "server/configs/gunicorn_config.py", "server.app:create_app()" ]

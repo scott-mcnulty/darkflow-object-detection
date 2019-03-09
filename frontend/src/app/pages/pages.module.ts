@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 import { ImageStoreComponent } from './image-store/image-store.component';
 import { AboutComponent } from './about/about.component';
 import { SettingsComponent } from './settings/settings.component';
@@ -19,7 +21,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    MDBBootstrapModule.forRoot()
   ]
 })
 export class PagesModule { }

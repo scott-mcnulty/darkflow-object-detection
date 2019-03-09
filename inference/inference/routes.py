@@ -30,9 +30,7 @@ def inference_loop():
         # Get image from camera server and predict on it
         frame = Imager.get_image_camera_server()
         detections = p.predict(frame)
-
-        # labels = [detection['label'] for detection in detections]
-
+        print('Made inference in {} seconds.'.format(time.time() - time_start))
 
         # Draw boxes around detected objects
         frame = Imager.draw_boxes_and_labels(detections, frame)
@@ -41,7 +39,9 @@ def inference_loop():
         Imager.save_image(config.base_image_path, frame, use_date=True)
 
         # Wait for a bit to get next frame
-        time.sleep(3)
+        print('Sleeping for {} seconds.'.format(config.inference_sleep_time))
+        time.sleep(config.inference_sleep_time)
+        print('awake')
 
 
 def single_inference():

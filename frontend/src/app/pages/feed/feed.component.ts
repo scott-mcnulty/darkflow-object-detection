@@ -12,7 +12,7 @@ import { AppSettingsService } from '../../services/app-settings.service';
 export class FeedComponent implements OnInit, OnDestroy {
 
   imageToShow: any;
-  imageRefresh = 100;
+  imageRefresh = 400;
   sub: Subscription;
 
   constructor(private imageService: ImageService, private appSettingsService: AppSettingsService ) { }
@@ -38,7 +38,8 @@ export class FeedComponent implements OnInit, OnDestroy {
   }
 
   getImageFromService() {
-    this.imageService.getImage(this.appSettingsService.getSetting('cameraServerUrl') + '/image').subscribe(data => {
+    // this.imageService.getImage(this.appSettingsService.getSetting('inferenceServerHostname') + '/image')
+    this.imageService.getImage(this.appSettingsService.getSetting('cameraServerHostname') + '/image').subscribe(data => {
       this.createImageFromBlob(data);
     }, error => {
       this.sub.unsubscribe();
